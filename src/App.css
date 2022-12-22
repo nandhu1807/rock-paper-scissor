@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background-image: radial-gradient(circle at center top, rgb(31, 55, 86), rgb(20, 21, 57));
+  color: #fff;
 }
 
 .App-logo {
@@ -14,14 +16,15 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  /*background-color: #282c34;*/
   min-height: 100vh;
-  display: flex;
+  /*display: flex;*/
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  /*color: white;*/
+  margin: 0;
 }
 
 .App-link {
