@@ -16,6 +16,11 @@ export const ScoreBorder = Styled.div`
     padding: 0.5rem 0.5rem;
     text-align: center;
     margin-right: 16px;
+    
+    @media(max-width: 25em) {
+        padding: 3px;
+    }
+    
 `;
 
 export const ScoreHeader = Styled.h3`

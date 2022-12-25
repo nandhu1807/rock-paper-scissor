@@ -11,12 +11,16 @@ function Score(props: {
       <Body className={'score-body'}>
         <Container className={'score-container'}>
           <ScoreBorder className={'score-border-1'}>
-            <ScoreHeader className={'score-header-1'}>{props.gameState.player1Name} SCORE</ScoreHeader>
+            <ScoreHeader className={'score-header-1'}>
+              {props.gameState.player1Name} SCORE
+            </ScoreHeader>
             <ScoreValue className={'score-value-1'}>{props.gameState.score1}</ScoreValue>
           </ScoreBorder>
           {props.selectedMode !== 'P VS C' && (
             <ScoreBorder className={'score-border-2'}>
-              <ScoreHeader className={'score-header-2'}>{props.gameState.player2Name} SCORE</ScoreHeader>
+              <ScoreHeader className={'score-header-2'}>
+                {props.gameState.player2Name} SCORE
+              </ScoreHeader>
               <ScoreValue className={'score-value-2'}>{props.gameState.score2}</ScoreValue>
             </ScoreBorder>
           )}
