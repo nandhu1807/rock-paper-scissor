@@ -3,8 +3,8 @@ import { Body, Heading } from './Header.Styles';
 
 function Header() {
   return (
-    <Body>
-      <Heading>ROCK, PAPER, SCISSORS</Heading>
+    <Body className={'header-body'}>
+      <Heading className={'header-heading'}>ROCK, PAPER, SCISSORS</Heading>
     </Body>
   );
 }
