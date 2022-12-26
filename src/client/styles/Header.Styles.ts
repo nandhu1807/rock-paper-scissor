@@ -21,4 +21,8 @@ export const Heading = Styled.h1`
     @media ${minWidthDevice.mobileL} {
       font-size: 40px;
     }  
+    
+    @media ${minWidthDevice.laptop} {
+      font-size: 55px;
+    }
 `;

@@ -1,6 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Body, Switch, SwitchLabel, SwitchRadio, SwitchSelection } from './ToggleSwitch.Styles';
+import {
+  Body,
+  Label,
+  Switch,
+  SwitchLabel,
+  SwitchRadio,
+  SwitchSelection,
+} from '../styles/ToggleSwitch.Styles';
 
 function ToggleSwitch(props: {
   selectedValue: string;
@@ -17,18 +24,15 @@ function ToggleSwitch(props: {
   return (
     <>
       <Body className={'toggle-switch-body'}>
+        <Label>SELECT MODE</Label>
         <Switch className={'toggle-switch'}>
           {toggleValues.map((value, index) => {
             return (
               <span key={index} className={'toggle-switch-span'}>
-                <SwitchRadio
-                  className={'toggle-switch-radio'}
-                  type={'radio'}
-                  name={'switch'}
-                  checked={props.selectedValue === value}
-                />
+                <SwitchRadio className={'toggle-switch-radio'} type={'radio'} name={'switch'} />
                 <SwitchLabel
                   className={'toggle-switch-label'}
+                  isChecked={props.selectedValue === value}
                   onClick={() => props.handleChange(value)}
                 >
                   {value}

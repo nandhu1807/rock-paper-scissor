@@ -8,10 +8,12 @@ import {
   Heading,
   IconDiv,
   IconImage,
+  InfoPlayer1,
   ResetButton,
   Winner,
   WinnerContainer,
-} from './UserSelection.Styles';
+  WinnerFlex,
+} from '../styles/UserSelection.Styles';
 import Score from './Score';
 import Rock from '../images/icon-rock.svg';
 import Paper from '../images/icon-paper.svg';
@@ -154,6 +156,19 @@ function UserSelection(props: { selectedMode: string }) {
     <>
       <Score gameState={gameState} selectedMode={props.selectedMode} />
       <Body className={'user-selection-body'}>
+        {props.selectedMode === 'P VS C' && !gameState.winner && (
+          <InfoPlayer1>PLEASE CHOOSE ANY ONE TO START PLAY</InfoPlayer1>
+        )}
+        {props.selectedMode === 'P VS P' &&
+          !gameState.winner &&
+          gameState.player1Choice === null && (
+            <InfoPlayer1>PLEASE CHOOSE ANY ONE FOR {gameState.player1Name}</InfoPlayer1>
+          )}
+        {props.selectedMode === 'P VS P' &&
+          !gameState.winner &&
+          gameState.player1Choice !== null && (
+            <InfoPlayer1>PLEASE CHOOSE ANY ONE FOR {gameState.player2Name}</InfoPlayer1>
+          )}
         {props.selectedMode !== 'C VS C' &&
           !gameState.winner &&
           Object.entries(displayElements).map(([key, value], index) => {
@@ -185,7 +200,7 @@ function UserSelection(props: { selectedMode: string }) {
             <Container className={'user-selection-player1-container'}>
               <Heading
                 className={'user-selection-player1-heading'}
-              >{`${gameState.player1Name}'s CHOICE`}</Heading>
+              >{`${gameState.player1Name} PICKED`}</Heading>
               <img
                 className={'user-selection-player1-img'}
                 src={displayElements[gameState.player1Choice]['icon']}
@@ -197,7 +212,7 @@ function UserSelection(props: { selectedMode: string }) {
             <Container className={'user-selection-player2-container'}>
               <Heading
                 className={'user-selection-player2-heading'}
-              >{`${gameState.player2Name}'s CHOICE`}</Heading>
+              >{`${gameState.player2Name} PICKED`}</Heading>
               <img
                 className={'user-selection-player2-img'}
                 src={displayElements[gameState.player2Choice]['icon']}
@@ -207,14 +222,14 @@ function UserSelection(props: { selectedMode: string }) {
           )}
         </Flex>
         {gameState.winner && (
-          <Flex className={'user-selection-winner-flex'}>
+          <WinnerFlex className={'user-selection-winner-flex'}>
             <WinnerContainer className={'user-selection-winner-container'}>
               <Winner className={'user-selection-winner-name'}>{gameState.winner}</Winner>
               <ResetButton className={'user-selection-reset-button'} onClick={handlePlayAgain}>
                 PLAY AGAIN
               </ResetButton>
             </WinnerContainer>
-          </Flex>
+          </WinnerFlex>
         )}
       </Body>
     </>

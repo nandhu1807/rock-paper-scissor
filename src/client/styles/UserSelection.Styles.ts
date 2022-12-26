@@ -1,8 +1,16 @@
 import Styled from 'styled-components';
+import { maxWidthDevice, minWidthDevice } from '../utils/deviceSizes';
 
 export const Body = Styled.div`
     margin-top: 32px;
     text-align: center;
+`;
+
+export const InfoPlayer1 = Styled.div`
+    color: #fff;
+    margin-top: 8px;
+    margin-bottom: 16px;
+    font-weight: 700;
 `;
 
 export const IconDiv = Styled.div`
@@ -15,55 +23,60 @@ export const IconImage = Styled.img`
 `;
 
 export const Flex = Styled.div`
-    margin-top: 40px;
+    margin-top: 16px;
     display: flex;
     justify-content: space-around;
-    @media(min-width: 62em) {
+    @media ${minWidthDevice.tablet} {
         justify-content: center;
+        margin-top: 40px;
     }
 `;
 
 export const Container = Styled.div`
-    margin-bottom: 2rem;
-    padding: 0 0.5rem;
+    margin-bottom: 32px;
+    padding: 0 8px;
+    @media ${minWidthDevice.tablet} {
+        margin-right: 24px;
+    }
 `;
 
 export const Heading = Styled.h3`
     color: white;
     text-align: center;
-    margin-bottom: 2rem;
-    @media(max-width: 28em) {
-        min-height: 2.8125rem;
+    margin-bottom: 32px;
+`;
+
+export const WinnerFlex = Styled.div`
+    margin-top: 8px;
+    display: flex;
+    justify-content: space-around;
+    @media ${minWidthDevice.tablet} {
+        justify-content: center;
     }
 `;
 
 export const WinnerContainer = Styled.div`
-    @media(max-width: 61.999em) {
-        margin-bottom: 1rem;
-    }
-    @media(min-width: 62em) {
-        top: 5rem;
-    }
+    margin-bottom: 16px;
 `;
 
 export const Winner = Styled.h1`
-    margin-bottom: 1rem;
+    margin-bottom: 16px;
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 24px;
     color: white;
     
-    @media(max-width: 50em) {
+    @media ${maxWidthDevice.tablet} {
         font-size: 20px;
     }
 `;
 
 export const ResetButton = Styled.div`
-    padding: 1.25rem 1.5rem;
+    padding: 16px 16px;
     background-color: white;
     border-radius: 5px;
     color: hsl(237, 49%, 15%);
-    font-size: 0.875rem;
-    letter-spacing: 0.1rem;
+    font-size: 14px;
+    letter-spacing: 0.8px;
     cursor: pointer;
 
     &: hover {

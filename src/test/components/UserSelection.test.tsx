@@ -41,9 +41,9 @@ describe('User Selection Component Tests', () => {
     });
     expect(container.getElementsByClassName('user-selection-player1-heading').length).toBe(1);
     const player1Name = container.getElementsByClassName('user-selection-player1-heading')[0];
-    expect(player1Name.textContent).toBe("YOU's CHOICE");
+    expect(player1Name.textContent).toBe("YOU PICKED");
     const player2Name = container.getElementsByClassName('user-selection-player2-heading')[0];
-    expect(player2Name.textContent).toBe("COMPUTER's CHOICE");
+    expect(player2Name.textContent).toBe("COMPUTER PICKED");
     const winnerName = container.getElementsByClassName('user-selection-winner-name');
     expect(winnerName).toHaveLength(1);
     const resetButton = container.getElementsByClassName('user-selection-reset-button');
@@ -67,10 +67,10 @@ describe('User Selection Component Tests', () => {
     });
     expect(container.getElementsByClassName('user-selection-player1-heading').length).toBe(1);
     const player1Name = container.getElementsByClassName('user-selection-player1-heading')[0];
-    expect(player1Name.textContent).toBe("COMPUTER 1's CHOICE");
+    expect(player1Name.textContent).toBe("COMPUTER 1 PICKED");
     expect(container.getElementsByClassName('user-selection-player2-heading').length).toBe(1);
     const player2Name = container.getElementsByClassName('user-selection-player2-heading')[0];
-    expect(player2Name.textContent).toBe("COMPUTER 2's CHOICE");
+    expect(player2Name.textContent).toBe("COMPUTER 2 PICKED");
     const winnerName = container.getElementsByClassName('user-selection-winner-name');
     expect(winnerName).toHaveLength(1);
     const resetButton = container.getElementsByClassName('user-selection-reset-button');
@@ -93,7 +93,7 @@ describe('User Selection Component Tests', () => {
     });
     expect(container.getElementsByClassName('user-selection-player1-heading').length).toBe(1);
     const player1Name = container.getElementsByClassName('user-selection-player1-heading')[0];
-    expect(player1Name.textContent).toBe("PLAYER 1's CHOICE");
+    expect(player1Name.textContent).toBe("PLAYER 1 PICKED");
     expect(container.getElementsByClassName('user-selection-player2-heading').length).toBe(0);
 
     act(() => {
@@ -101,7 +101,7 @@ describe('User Selection Component Tests', () => {
     });
     expect(container.getElementsByClassName('user-selection-player2-heading').length).toBe(1);
     const player2Name = container.getElementsByClassName('user-selection-player2-heading')[0];
-    expect(player2Name.textContent).toBe("PLAYER 2's CHOICE");
+    expect(player2Name.textContent).toBe("PLAYER 2 PICKED");
     const winnerName = container.getElementsByClassName('user-selection-winner-name');
     expect(winnerName).toHaveLength(1);
     expect(winnerName[0].textContent).toBe('PLAYER 1 WIN');
@@ -125,7 +125,7 @@ describe('User Selection Component Tests', () => {
     });
     expect(container.getElementsByClassName('user-selection-player1-heading').length).toBe(1);
     const player1Name = container.getElementsByClassName('user-selection-player1-heading')[0];
-    expect(player1Name.textContent).toBe("PLAYER 1's CHOICE");
+    expect(player1Name.textContent).toBe("PLAYER 1 PICKED");
     expect(container.getElementsByClassName('user-selection-player2-heading').length).toBe(0);
 
     act(() => {
@@ -133,7 +133,7 @@ describe('User Selection Component Tests', () => {
     });
     expect(container.getElementsByClassName('user-selection-player2-heading').length).toBe(1);
     const player2Name = container.getElementsByClassName('user-selection-player2-heading')[0];
-    expect(player2Name.textContent).toBe("PLAYER 2's CHOICE");
+    expect(player2Name.textContent).toBe("PLAYER 2 PICKED");
     const winnerName = container.getElementsByClassName('user-selection-winner-name');
     expect(winnerName).toHaveLength(1);
     expect(winnerName[0].textContent).toBe('PLAYER 2 WIN');
@@ -157,7 +157,7 @@ describe('User Selection Component Tests', () => {
     });
     expect(container.getElementsByClassName('user-selection-player1-heading').length).toBe(1);
     const player1Name = container.getElementsByClassName('user-selection-player1-heading')[0];
-    expect(player1Name.textContent).toBe("PLAYER 1's CHOICE");
+    expect(player1Name.textContent).toBe("PLAYER 1 PICKED");
     expect(container.getElementsByClassName('user-selection-player2-heading').length).toBe(0);
 
     act(() => {
@@ -165,7 +165,7 @@ describe('User Selection Component Tests', () => {
     });
     expect(container.getElementsByClassName('user-selection-player2-heading').length).toBe(1);
     const player2Name = container.getElementsByClassName('user-selection-player2-heading')[0];
-    expect(player2Name.textContent).toBe("PLAYER 2's CHOICE");
+    expect(player2Name.textContent).toBe("PLAYER 2 PICKED");
     const winnerName = container.getElementsByClassName('user-selection-winner-name');
     expect(winnerName).toHaveLength(1);
     expect(winnerName[0].textContent).toBe('TIE');
@@ -189,7 +189,7 @@ describe('User Selection Component Tests', () => {
     });
     expect(container.getElementsByClassName('user-selection-player1-heading').length).toBe(1);
     const player1Name = container.getElementsByClassName('user-selection-player1-heading')[0];
-    expect(player1Name.textContent).toBe("PLAYER 1's CHOICE");
+    expect(player1Name.textContent).toBe("PLAYER 1 PICKED");
     expect(container.getElementsByClassName('user-selection-player2-heading').length).toBe(0);
 
     act(() => {
@@ -197,7 +197,7 @@ describe('User Selection Component Tests', () => {
     });
     expect(container.getElementsByClassName('user-selection-player2-heading').length).toBe(1);
     const player2Name = container.getElementsByClassName('user-selection-player2-heading')[0];
-    expect(player2Name.textContent).toBe("PLAYER 2's CHOICE");
+    expect(player2Name.textContent).toBe("PLAYER 2 PICKED");
     const resetButton = container.getElementsByClassName('user-selection-reset-button');
     expect(resetButton.length).toBe(1);
     const playAgainButton = container.getElementsByClassName('user-selection-reset-button')[0];

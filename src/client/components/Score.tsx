@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Body, Container, ScoreBorder, ScoreHeader, ScoreValue } from './Score.Styles';
+import { Body, Container, ScoreBorder, ScoreHeader, ScoreValue } from '../styles/Score.Styles';
 
 function Score(props: {
   gameState: { player1Name: string; player2Name: string; score1: number; score2: number };
@@ -12,7 +12,7 @@ function Score(props: {
         <Container className={'score-container'}>
           <ScoreBorder className={'score-border-1'}>
             <ScoreHeader className={'score-header-1'}>
-              {props.gameState.player1Name} SCORE
+              {props.gameState.player1Name === 'YOU' ? '' : props.gameState.player1Name} SCORE
             </ScoreHeader>
             <ScoreValue className={'score-value-1'}>{props.gameState.score1}</ScoreValue>
           </ScoreBorder>

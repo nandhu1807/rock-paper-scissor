@@ -1,10 +1,11 @@
 import Styled from 'styled-components';
+import { maxWidthDevice } from '../utils/deviceSizes';
 
 export const Body = Styled.div`
   float: right;
   margin-top: 8px;
   
-  @media(max-width: 35em) {
+  @media ${maxWidthDevice.tablet} {
     margin-top: 16px;
     text-align: center;
     float: unset;
@@ -50,5 +51,5 @@ export const SwitchLabel = Styled.label<{ isChecked: boolean }>`
   color: rgba(0, 0, 0, 0.6);
   text-align: center;
   cursor: pointer;
-  color: ${(props: { isChecked: boolean; }) => props.isChecked ? '#fff' : '#000'};
+  color: ${(props: { isChecked: boolean }) => (props.isChecked ? '#fff' : '#000')};
 `;

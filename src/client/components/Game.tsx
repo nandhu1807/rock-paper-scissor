@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Body } from './Game.Styles';
+import { Body } from '../styles/Game.Styles';
 import Header from './Header';
 import ToggleSwitch from './ToggleSwitch';
 import UserSelection from './UserSelection';
