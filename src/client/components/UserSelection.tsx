@@ -58,7 +58,7 @@ function UserSelection(props: { selectedMode: string }) {
     } else if (props.selectedMode === 'P VS C') {
       play1Name = 'YOU';
       play2Name = 'COMPUTER';
-    } else if (props.selectedMode === 'C VS C') {
+    } else {
       play1Name = 'COMPUTER 1';
       play2Name = 'COMPUTER 2';
     }
@@ -97,7 +97,7 @@ function UserSelection(props: { selectedMode: string }) {
         player1Choice: choice,
         player2Choice: computerChoice,
       }));
-    } else if (props.selectedMode === 'P VS P') {
+    } else {
       if (gameState.player1Choice !== null) {
         setGameState((prevState) => ({ ...prevState, player2Choice: choice }));
       } else {
@@ -134,7 +134,7 @@ function UserSelection(props: { selectedMode: string }) {
     }
   }
 
-  function handleReset(): void {
+  function handlePlayAgain(): void {
     setGameState({ ...gameState, player1Choice: null, player2Choice: null, winner: null });
   }
 
@@ -158,7 +158,10 @@ function UserSelection(props: { selectedMode: string }) {
           !gameState.winner &&
           Object.entries(displayElements).map(([key, value], index) => {
             return (
-              <IconDiv key={index} className={`user-selection-icon-div-${index}`}>
+              <IconDiv
+                key={index}
+                className={`user-selection-icon-div user-selection-icon-div-${index}`}
+              >
                 <IconImage
                   className={`user-selection-icon-image-${index}`}
                   src={value.icon}
@@ -207,7 +210,7 @@ function UserSelection(props: { selectedMode: string }) {
           <Flex className={'user-selection-winner-flex'}>
             <WinnerContainer className={'user-selection-winner-container'}>
               <Winner className={'user-selection-winner-name'}>{gameState.winner}</Winner>
-              <ResetButton className={'user-selection-reset-button'} onClick={handleReset}>
+              <ResetButton className={'user-selection-reset-button'} onClick={handlePlayAgain}>
                 PLAY AGAIN
               </ResetButton>
             </WinnerContainer>
