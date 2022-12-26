@@ -1,4 +1,5 @@
 import Styled from 'styled-components';
+import {maxWidthDevice} from "../utils/deviceSizes";
 
 export const Body = Styled.div`
     margin-top: 32px;
@@ -17,10 +18,9 @@ export const ScoreBorder = Styled.div`
     text-align: center;
     margin-right: 16px;
     
-    @media(max-width: 25em) {
+    @media ${maxWidthDevice.mobileXS} {
         padding: 3px;
     }
-    
 `;
 
 export const ScoreHeader = Styled.h3`
