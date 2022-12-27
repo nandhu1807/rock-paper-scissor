@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch, useSelector } from 'react-redux';
 import { Button } from '@mui/material';
 import {
   Body,
@@ -18,7 +19,10 @@ import Score from './Score';
 import Rock from '../images/icon-rock.svg';
 import Paper from '../images/icon-paper.svg';
 import Scissors from '../images/icon-scissors.svg';
+import actionTypes from '../utils/actionTypes';
 import { Choice, findWinner, Outcome, randomChoice } from '../utils/GameLogic';
+import { RootState } from '../utils/store';
+import { GetAllValuesFromStorage } from '../utils/types';
 
 interface GameState {
   player1Choice: 'Rock' | 'Paper' | 'Scissors' | null;
@@ -41,6 +45,8 @@ type Display = {
 };
 
 function UserSelection(props: { selectedMode: string }) {
+  const dispatch = useDispatch();
+
   const [gameState, setGameState] = useState<GameState>({
     player1Choice: null,
     player2Choice: null,
@@ -50,6 +56,26 @@ function UserSelection(props: { selectedMode: string }) {
     score2: 0,
     winner: null,
   });
+
+  const getValuesFromLocalStorage: GetAllValuesFromStorage = useSelector(
+    (state: RootState) => state.getFromStorageReducer.mapFromStorage,
+  );
+
+  useEffect(() => {
+    dispatch({
+      type: actionTypes.GET_ALL_VALUES_FROM_STORAGE,
+    });
+  }, [props.selectedMode]);
+
+  useEffect(() => {
+    if (getValuesFromLocalStorage !== null) {
+      setGameState((prevState) => ({
+        ...prevState,
+        score1: getValuesFromLocalStorage.score1,
+        score2: getValuesFromLocalStorage.score2,
+      }));
+    }
+  }, [getValuesFromLocalStorage]);
 
   useEffect(() => {
     let play1Name = '',
@@ -117,6 +143,13 @@ function UserSelection(props: { selectedMode: string }) {
   function handleScore(result: Outcome): void {
     switch (result) {
       case 'WIN':
+        dispatch({
+          type: actionTypes.SAVE_ALL_VALUES_IN_STORAGE,
+          payload: {
+            score1: gameState.score1 + 1,
+            score2: gameState.score2 - 1,
+          },
+        });
         setGameState((prevState) => ({
           ...prevState,
           score1: prevState.score1 + 1,
@@ -124,6 +157,13 @@ function UserSelection(props: { selectedMode: string }) {
         }));
         break;
       case 'LOOSE':
+        dispatch({
+          type: actionTypes.SAVE_ALL_VALUES_IN_STORAGE,
+          payload: {
+            score1: gameState.score1 - 1,
+            score2: gameState.score2 + 1,
+          },
+        });
         setGameState((prevState) => ({
           ...prevState,
           score1: prevState.score1 - 1,

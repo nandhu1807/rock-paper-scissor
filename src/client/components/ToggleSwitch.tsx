@@ -18,7 +18,7 @@ function ToggleSwitch(props: {
   const availableModeValues: any = {
     'P VS C': 'Player VS Computer',
     'C VS C': 'Computer VS Computer',
-    'P VS P': 'Player VS Player'
+    'P VS P': 'Player VS Player',
   };
 
   function selectionStyle() {

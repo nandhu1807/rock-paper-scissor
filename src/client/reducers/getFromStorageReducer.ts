@@ -2,7 +2,7 @@ import actions from '../utils/actionTypes';
 import { GetAllValuesFromStorage } from '../utils/types';
 
 const defaultState = {
-  mapFromStorage: {score1: 0, score2: 0},
+  mapFromStorage: { score1: 0, score2: 0 },
   errorMsg: '',
 };
 

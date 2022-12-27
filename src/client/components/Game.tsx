@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { Body, ToggleFlex, ToggleRules } from '../styles/Game.Styles';
 import Header from './Header';
 import ToggleSwitch from './ToggleSwitch';
@@ -12,7 +12,7 @@ function Game() {
   const [displayRules, setDisplayRules] = useState(false);
   const dispatch = useDispatch();
 
-  useEffect(()=>{
+  useEffect(() => {
     let getValue: string | null;
     // eslint-disable-next-line prefer-const
     getValue = localStorage.getItem('selectedMode');
@@ -21,7 +21,7 @@ function Game() {
     } else {
       setSelectedMode('P VS C');
     }
-  },[]);
+  }, []);
 
   function handleChange(toggleValue: string) {
     setSelectedMode(toggleValue);

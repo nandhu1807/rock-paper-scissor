@@ -1,25 +1,24 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
 import { act } from 'react-dom/test-utils';
 import App from '../../App';
+import { cleanup, render } from '../utils/test-utils';
 
 describe('App Component Tests', () => {
-  let container: Element | DocumentFragment | any;
-
   beforeEach(() => {
-    container = document.createElement('div');
+    render(<App />);
   });
 
   afterEach(() => {
-    container.remove();
-    container = null;
+    cleanup();
   });
 
   test('renders App Component', () => {
+    let component: Element | DocumentFragment | any;
     act(() => {
-      ReactDOM.createRoot(container).render(<App />);
+      const div: Element | DocumentFragment | any = document.createElement('div');
+      component = render(<App />, div);
     });
-    expect(container.getElementsByClassName('game-body').length).toBe(1);
-    expect(container.getElementsByClassName('game-toggle-switch-div').length).toBe(1);
+    expect(component.container.getElementsByClassName('game-body').length).toBe(1);
+    expect(component.container.getElementsByClassName('game-toggle-switch-div').length).toBe(1);
   });
 });
