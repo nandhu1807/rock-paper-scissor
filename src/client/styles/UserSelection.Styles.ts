@@ -22,6 +22,16 @@ export const IconImage = Styled.img`
     cursor: pointer;
 `;
 
+export const ComputerButton = Styled.button`
+    background-color: rgba(0,0,0,0);
+    padding: 14px 32px;
+    color: white;
+    letter-spacing: 3.2px;
+    border: 2px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+`;
+
 export const Flex = Styled.div`
     margin-top: 16px;
     display: flex;
@@ -78,8 +88,4 @@ export const ResetButton = Styled.div`
     font-size: 14px;
     letter-spacing: 0.8px;
     cursor: pointer;
-
-    &: hover {
-        color: hsl(349, 71%, 52%);
-    }
 `;

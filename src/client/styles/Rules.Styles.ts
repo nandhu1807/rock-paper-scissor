@@ -2,7 +2,6 @@ import Styled from 'styled-components';
 import { maxWidthDevice, minWidthDevice } from '../utils/deviceSizes';
 
 export const Modal = Styled.div`
-  position: absolute;
   top: 0;
   left: 0;
   width: 100%;

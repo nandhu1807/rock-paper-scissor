@@ -16,7 +16,6 @@ export const Body = styled.div`
 export const ToggleFlex = styled.div`
   display: flex;
   flex-direction: row-reverse;
-  position: absolute;
 
   @media ${maxWidthDevice.tablet} and (min-height: 42em) {
     bottom: 16px;

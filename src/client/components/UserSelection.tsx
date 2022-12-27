@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
-import { Button } from '@mui/material';
 import {
   Body,
+  ComputerButton,
   Container,
   Flex,
   Heading,
@@ -227,13 +227,12 @@ function UserSelection(props: { selectedMode: string }) {
             );
           })}
         {props.selectedMode === 'C VS C' && !gameState.winner && (
-          <Button
+          <ComputerButton
             className={'user-selection-play-computer-button'}
             onClick={() => handlePlayForComputer()}
-            variant={'outlined'}
           >
-            Play For Computer
-          </Button>
+            PLAY FOR COMPUTER
+          </ComputerButton>
         )}
         <Flex className={'user-selection-picked-flex'}>
           {gameState.player1Choice && (
