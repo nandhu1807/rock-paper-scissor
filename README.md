@@ -4,7 +4,8 @@
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Setup](#setup)
-* Screenshots (#screenshots)
+* [Screenshots](#screenshots)
+* [How to Play](#how-to-play)
 
 ## General Info
 Rock, Paper, Scissors Game
