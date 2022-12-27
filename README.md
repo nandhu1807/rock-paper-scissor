@@ -73,6 +73,3 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
    * To play again, Click Play Again to start the game again
 5. Click on Rules to View the rules of the game
 6. Score and Mode will be maintained and will be retrieved after refreshing the screen
-
-### Test Case Coverage
-[index.html](coverage%2Flcov-report%2Findex.html)
