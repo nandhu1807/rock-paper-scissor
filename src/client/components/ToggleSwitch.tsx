@@ -15,6 +15,12 @@ function ToggleSwitch(props: {
 }) {
   const toggleValues = ['P VS C', 'C VS C', 'P VS P'];
 
+  const availableModeValues: any = {
+    'P VS C': 'Player VS Computer',
+    'C VS C': 'Computer VS Computer',
+    'P VS P': 'Player VS Player'
+  };
+
   function selectionStyle() {
     return {
       left: `${(toggleValues.indexOf(props.selectedValue) / 3) * 100}%`,
@@ -28,7 +34,7 @@ function ToggleSwitch(props: {
         <Switch className={'toggle-switch'}>
           {toggleValues.map((value, index) => {
             return (
-              <span key={index} className={'toggle-switch-span'}>
+              <span key={index} className={'toggle-switch-span'} title={availableModeValues[value]}>
                 <SwitchRadio className={'toggle-switch-radio'} type={'radio'} name={'switch'} />
                 <SwitchLabel
                   className={'toggle-switch-label'}
